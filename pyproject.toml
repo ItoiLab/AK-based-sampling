@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ak-based-sampler"
+version = "0.1.0"
+description = "AK-MCS sampler for reliability analysis with Gaussian process surrogates."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "AK-based-sampling contributors" }
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+examples = [
+    "jupyter",
+    "matplotlib",
+]
+
+[tool.setuptools.packages.find]
+include = ["ak_based_sampler*"]
+
+[tool.setuptools.package-data]
+ak_based_sampler = ["py.typed"]
