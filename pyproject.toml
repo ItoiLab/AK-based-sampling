@@ -31,7 +31,8 @@ examples = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["ak_based_sampler*"]
+include = ["ak_based_sampler*", "direction_searcher*"]
 
 [tool.setuptools.package-data]
 ak_based_sampler = ["py.typed"]
+direction_searcher = ["py.typed"]
