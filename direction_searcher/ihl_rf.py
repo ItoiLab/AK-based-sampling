@@ -196,6 +196,14 @@ class iHL_RF:
             c = 1.0
             converged = False
             relative_scale = max(abs(G0), np.finfo(float).eps)
+            history = [
+                {
+                    "iteration": 0,
+                    "point": np.asarray(ui, dtype=float).copy(),
+                    "G": Gi,
+                    "beta": float(jnp.linalg.norm(ui)),
+                }
+            ]
 
             dG = self._evaluate_grad(ui)
             dG_norm = float(jnp.linalg.norm(dG))
@@ -242,6 +250,14 @@ class iHL_RF:
 
                 orthogonal_norm = float(jnp.linalg.norm(ui - (alpha @ ui) * alpha))
                 relative_g = abs(Gi) / relative_scale
+                history.append(
+                    {
+                        "iteration": i + 1,
+                        "point": np.asarray(ui, dtype=float).copy(),
+                        "G": Gi,
+                        "beta": float(jnp.linalg.norm(ui)),
+                    }
+                )
                 _LOGGER.info(
                     "Iteration %s/%s: G=%.6g, beta=%.6g, grad_norm=%.6g, step=%.6g, rel_G=%.6g, orth=%.6g",
                     i + 1,
@@ -269,6 +285,7 @@ class iHL_RF:
                 "grad_norm": dG_norm,
                 "n_iters": i + 1,
                 "converged": converged,
+                "history": tuple(history),
             }
 
             _LOGGER.info(
