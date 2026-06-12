@@ -88,6 +88,8 @@ ipython_config.py
 
 # UV
 # uv.lock
+.uv-cache/
+.uv-python/
 
 # poetry
 # poetry.lock

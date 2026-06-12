@@ -12,6 +12,7 @@ authors = [
     { name = "AK-based-sampling contributors" }
 ]
 dependencies = [
+    "jax",
     "numpy",
     "scipy",
     "scikit-learn",

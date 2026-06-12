@@ -6,20 +6,30 @@ This repository provides organized, reusable, and extensible implementations for
 
 ## Installation
 
+This project is managed with [uv](https://docs.astral.sh/uv/).
+
+Create or update the local environment from the lockfile:
+
 ```powershell
-pip install .
+uv sync
 ```
 
 To run the example notebook with plotting dependencies:
 
 ```powershell
-pip install ".[examples]"
+uv sync --extra examples
 ```
 
-For development from this source checkout, editable installation is usually the most convenient option:
+Run Python commands inside the uv-managed environment:
 
 ```powershell
-pip install -e ".[examples]"
+uv run python -c "from ak_based_sampler import AK_MCS; print(AK_MCS)"
+```
+
+Launch Jupyter for the example notebooks after installing the example dependencies:
+
+```powershell
+uv run jupyter lab
 ```
 
 ## Usage
@@ -51,7 +61,7 @@ Example notebooks are available in the `examples/` directory.
 
 - `examples/ak_mcs_basic.ipynb`: basic AK-MCS run with a sampling-result plot
 
-If a notebook raises `ModuleNotFoundError: No module named 'ak_based_sampler'`, install the package with `pip install -e ".[examples]"` from this repository root, or restart the notebook kernel and run the first cell again.
+If a notebook raises `ModuleNotFoundError: No module named 'ak_based_sampler'`, run `uv sync --extra examples` from this repository root, or restart the notebook kernel and run the first cell again.
 
 ## Implemented methods
 
