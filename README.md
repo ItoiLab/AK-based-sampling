@@ -71,7 +71,7 @@ When you add a new method, add it to this table with the paper that the implemen
 | Class | Method | Reference |
 | --- | --- | --- |
 | `AK_MCS` | Active learning reliability method combining Kriging and Monte Carlo simulation | Echard et al. (2011) |
-| `AK_IS` | Active learning reliability method combining Kriging and importance sampling | Planned |
+| `AK_IS` | Active learning reliability method combining Kriging and importance sampling | Echard et al. (2013) |
 
 ## Citation
 
@@ -88,6 +88,15 @@ Method reference template:
   number={2},
   pages={145--154},
   year={2011},
+  publisher={Elsevier}
+}
+@article{echard2013combined,
+  title={A combined importance sampling and kriging reliability method for small failure probabilities with time-demanding numerical models},
+  author={Echard, Benjamin and Gayton, Nicolas and Lemaire, Maurice and Relun, Nicolas},
+  journal={Reliability Engineering \& System Safety},
+  volume={111},
+  pages={232--240},
+  year={2013},
   publisher={Elsevier}
 }
 ```
