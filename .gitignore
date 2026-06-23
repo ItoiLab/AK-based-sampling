@@ -166,7 +166,7 @@ cython_debug/
 # .idea/
 
 # Visual Studio Code
-# .vscode/
+.vscode/
 tempCodeRunnerFile.py
 
 # Ruff
