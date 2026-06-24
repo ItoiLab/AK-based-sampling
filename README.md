@@ -72,6 +72,7 @@ When you add a new method, add it to this table with the paper that the implemen
 | --- | --- | --- |
 | `AK_MCS` | Active learning reliability method combining Kriging and Monte Carlo simulation | Echard et al. (2011) |
 | `AK_IS` | Active learning reliability method combining Kriging and importance sampling | Echard et al. (2013) |
+| `AK_SYS` | Active learning reliability method for systems with multiple limit-state functions | Fauriat and Gayton (2014) |
 
 ## Citation
 
